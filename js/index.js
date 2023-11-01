@@ -12,7 +12,7 @@ $(document).on('pageinit', function () {
             if (selectedFile.type === 'application/javascript' || selectedFile.name.endsWith('.js')) {
                 readAndLogFileContent(selectedFile);
             } else {
-                alert('Precisa Ser um Arquivo .js');
+                alert('It needs to be a js file!');
             }
         } else {
             alert('Select the file before sending it! (data.js)');
