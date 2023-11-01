@@ -40,7 +40,7 @@ function readAndLogFileContent(file) {
                                 for (let varIndex = 0; varIndex < data.project[6].at(layoutIndex)[1].length; varIndex++) {
                                     var collContent = `
 										<div data-role='collapsible'>
-										<h4>${(typeof data.project[6].at(layoutIndex)[1][varIndex][1] == 'string') ? varIndex + " | " + data.project[6].at(layoutIndex)[1][varIndex][1] : varIndex + " | " +"<span style='color: red'>Complex Type<span>"}</h4>	
+										<h4>${(typeof data.project[6].at(layoutIndex)[1][varIndex][1] == 'string') ? data.project[6].at(layoutIndex)[1][varIndex][1] : "<span style='color: red'>Complex Type<span>"}</h4>	
 										<p>Constant: <span style="${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? 'color: red;' : 'color: green;'}">${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? "Yes" : "No"}</span></p>
 										<p>Type: ${typeof data.project[6].at(layoutIndex)[1][varIndex][3] == "number" ? "Number" : "Text"}</p>
 										<label for="text-basic">Initial Value:</label>
