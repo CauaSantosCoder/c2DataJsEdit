@@ -40,11 +40,11 @@ function readAndLogFileContent(file) {
                                 for (let varIndex = 0; varIndex < data.project[6].at(layoutIndex)[1].length; varIndex++) {
                                     var collContent = `
 										<div data-role='collapsible'>
-											<h4>${(typeof data.project[6].at(layoutIndex)[1][varIndex][1] == 'string') ? varIndex + " | " + data.project[6].at(layoutIndex)[1][varIndex][1] : varIndex + " | " +"<span style='color: red'>Complex Type<span>"}</h4>	
-											<p>Constant: <span style="${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? 'color: red;' : 'color: green;'}">${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? "Yes" : "No"}</span></p>
-											<p>Type: ${typeof data.project[6].at(layoutIndex)[1][varIndex][3] == "number" ? "Number" : "Text"}</p>
-											<label for="text-basic">Initial Value:</label>
-											<input type="text" varIndex="${layoutIndex}|${varIndex}" name="text-basic" id="varValue" value="${data.project[6].at(layoutIndex)[1][varIndex][3]}">
+										<h4>${(typeof data.project[6].at(layoutIndex)[1][varIndex][1] == 'string') ? varIndex + " | " + data.project[6].at(layoutIndex)[1][varIndex][1] : varIndex + " | " +"<span style='color: red'>Complex Type<span>"}</h4>	
+										<p>Constant: <span style="${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? 'color: red;' : 'color: green;'}">${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? "Yes" : "No"}</span></p>
+										<p>Type: ${typeof data.project[6].at(layoutIndex)[1][varIndex][3] == "number" ? "Number" : "Text"}</p>
+										<label for="text-basic">Initial Value:</label>
+										<input type="text" varIndex="${layoutIndex}|${varIndex}" name="text-basic" id="varValue" value="${data.project[6].at(layoutIndex)[1][varIndex][3]}">
 										</div>`;
                                     var newCollapsible = $(collContent);
                                     newCollapsible.collapsible();
@@ -53,13 +53,13 @@ function readAndLogFileContent(file) {
                             }
                             const proj_data = `
 								<div class="ui-body ui-body-b ui-corner-all">
-									<h3>Project Details</h3>
-									<p><strong>Project Name:</strong> ${data.project[26]}</p>
-									<p><strong>Project Version:</strong> ${data.project[16]}</p>
-									<p><strong>First Layout:</strong> ${data.project[1]}</p>
-									<p><strong>Window Width (initial):</strong> ${data.project[10]} px</p>
-									<p><strong>Window Height (initial):</strong> ${data.project[11]} px</p>
-									<p><strong>Sounds Folder:</strong> ${data.project[8]}</p>
+								<h3>Project Details</h3>
+								<p><strong>Project Name:</strong> ${data.project[26]}</p>
+								<p><strong>Project Version:</strong> ${data.project[16]}</p>
+								<p><strong>First Layout:</strong> ${data.project[1]}</p>
+								<p><strong>Window Width (initial):</strong> ${data.project[10]} px</p>
+								<p><strong>Window Height (initial):</strong> ${data.project[11]} px</p>
+								<p><strong>Sounds Folder:</strong> ${data.project[8]}</p>
 								</div>`;
                             $("#mainPage").append(proj_data);
                             $("#btnSave").show();
