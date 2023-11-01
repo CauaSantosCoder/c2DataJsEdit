@@ -1,10 +1,10 @@
 //@CauaSantos - Skull
 //Created on: 01/11/2023
 //jQuery 1.11.1
-$(document).on('pageinit', function() {
+$(document).on('pageinit', function () {
     $("#uiBDH").hide();
     $("#btnSave").hide();
-    $('#fileUploadForm').on('submit', function(e) {
+    $('#fileUploadForm').on('submit', function (e) {
         e.preventDefault();
         var fileInput = $('#fileToUpload')[0];
         if (fileInput.files.length > 0) {
@@ -22,7 +22,7 @@ $(document).on('pageinit', function() {
 
 function readAndLogFileContent(file) {
     var reader = new FileReader();
-    reader.onload = function(event) {
+    reader.onload = function (event) {
         var fileContent = event.target.result;
         try {
             const data = JSON.parse(fileContent);
@@ -34,18 +34,18 @@ function readAndLogFileContent(file) {
                         $("#uiBDH").show("slow", () => {
                             for (let layoutIndex = 0; layoutIndex < data.project[6].length; layoutIndex++) {
                                 var layoutIndexHeader = `
-								<h3>Layout: ${data.project[6].at(layoutIndex)[0]}</h3> 
-							 `;
+									<h3>Layout: ${data.project[6].at(layoutIndex)[0]}</h3> 
+									 `;
                                 $("#uiBD").append(layoutIndexHeader);
                                 for (let varIndex = 0; varIndex < data.project[6].at(layoutIndex)[1].length; varIndex++) {
                                     var collContent = `
-									<div data-role='collapsible'>
-										<h4>${(typeof data.project[6].at(layoutIndex)[1][varIndex][1] == 'string') ? varIndex + " | " + data.project[6].at(layoutIndex)[1][varIndex][1] : varIndex + " | " +"<span style='color: red'>Complex Type<span>"}</h4>	
-										<p>Constant: <span style="${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? 'color: red;' : 'color: green;'}">${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? "Yes" : "No"}</span></p>
-										<p>Type: ${typeof data.project[6].at(layoutIndex)[1][varIndex][3] == "number" ? "Number" : "Text"}</p>
-										<label for="text-basic">Initial Value:</label>
-										<input type="text" varIndex="${layoutIndex}|${varIndex}" name="text-basic" id="varValue" value="${data.project[6].at(layoutIndex)[1][varIndex][3]}">
-									</div>`;
+										<div data-role='collapsible'>
+											<h4>${(typeof data.project[6].at(layoutIndex)[1][varIndex][1] == 'string') ? varIndex + " | " + data.project[6].at(layoutIndex)[1][varIndex][1] : varIndex + " | " +"<span style='color: red'>Complex Type<span>"}</h4>	
+											<p>Constant: <span style="${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? 'color: red;' : 'color: green;'}">${(data.project[6].at(layoutIndex)[1][varIndex][5]) ? "Yes" : "No"}</span></p>
+											<p>Type: ${typeof data.project[6].at(layoutIndex)[1][varIndex][3] == "number" ? "Number" : "Text"}</p>
+											<label for="text-basic">Initial Value:</label>
+											<input type="text" varIndex="${layoutIndex}|${varIndex}" name="text-basic" id="varValue" value="${data.project[6].at(layoutIndex)[1][varIndex][3]}">
+										</div>`;
                                     var newCollapsible = $(collContent);
                                     newCollapsible.collapsible();
                                     $("#uiBD").append(newCollapsible);
