@@ -41,7 +41,7 @@ function readAndLogFileContent(file) {
         var fileContent = event.target.result;
         try {
             const data = JSON.parse(fileContent);
-			console.log(data);
+			//console.log(data);
             if (typeof data.project[8] === 'string' && typeof data.project[26] === 'string') {
                 $("#info")[0].innerText = "File uploaded successfully!";
                 $('#info').css('color', 'green');
