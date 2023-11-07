@@ -4,84 +4,56 @@
 <head>
     <meta charset="UTF-8" />
     <title>Data JS</title>
-	<link rel="icon" type="image/x-icon" href="icon.ico">
+    <link rel="icon" type="image/x-icon" href="icon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
     <!--jQuery&jQueryMobile-->
     <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
     <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
 <body>
-
     <div data-role="page">
-
         <div data-role="header" data-position="fixed">
             <h1>MDZ | DATA JS EDIT</h1>
         </div>
-
         <div role="main" class="ui-content" id="mainPage">
             <h2 id="info">Select data.js File</h2>
             <p style="color: #94151d;">Attention! Back up the file before modifying it.</p>
-			
             <form id="fileUploadForm">
                 <input type="file" name="fileToUpload" id="fileToUpload">
-				
-				<fieldset data-role="controlgroup">
-			    	<legend>Choose what will be loaded.</legend>
-			
-				    <label for="chk-gv">Global Variables (By Layouts) <span style="color: green;">Fast<span></label>
-				    <input type="checkbox" name="chk-gv" id="chk-gv">
-				
-				    <label for="chk-ii">Instances Properties By Layout + Layers <span style="color: red;">Slow</span></label>
-				    <input type="checkbox" name="chk-ii" id="chk-ii">
-					<div class="ui-corner-all custom-corners" id="filters">
-						<div class="ui-bar ui-bar-a" >
-							<h4>Filters</h4>
-						</div>
-						<div class="ui-body ui-body-a">
-							<div class="ui-corner-all custom-corners">
-								<div class="ui-bar ui-bar-a" >
-									<h4>Types</h4>
-									<div class="ui-body ui-body-a">
-										 <label for="typeSprite">Sprites</label>
-				  						 <input type="checkbox" name="typeSprite" id="typeSprite">
-										 <label for="typeText">Texts</label>
-										 <input type="checkbox" name="typeText" id="typeText">
-										 <label for="typeUnk">Unknown</label>
-										 <input type="checkbox" name="typeUnk" id="typeUnk">
-									</div>
-								</div>
-							<div>
-						</div>
-					</div>
-				</fieldset>
-				
+                <fieldset data-role="controlgroup">      <legend>Choose what will be loaded.</legend>     <label for="chk-gv">Global Variables (By Layouts) <span style="color: green;">Fast<span></label>     <input type="checkbox" name="chk-gv" id="chk-gv">     <label for="chk-ii">Instances Properties By Layout + Layers <span style="color: red;">Slow</span></label>     <input type="checkbox" name="chk-ii" id="chk-ii">
+                    <div class="ui-corner-all custom-corners" id="filters">
+                        <div class="ui-bar ui-bar-a">
+                            <h4>Filters</h4>
+                        </div>
+                        <div class="ui-body ui-body-a">
+                            <div class="ui-corner-all custom-corners">
+                                <div class="ui-bar ui-bar-a">
+                                    <h4>Types</h4>
+                                    <div class="ui-body ui-body-a">  <label for="typeSprite">Sprites</label>     <input type="checkbox" name="typeSprite" id="typeSprite">  <label for="typeText">Texts</label>  <input type="checkbox" name="typeText" id="typeText">
+                                        <label for="typeUnk">Unknown</label>  <input type="checkbox" name="typeUnk" id="typeUnk">
+                                    </div>
+                                </div>
+                                <div>
+                                </div>
+                            </div>
+                </fieldset>
                 <input type="submit" value="Load File" data-theme="e">
             </form>
         </div>
-		
         <h3 class="ui-bar ui-bar-a" id="uiBDH">VARIABLES BY LAYOUT_INDEX</h3>
-
-
-		<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop" id="popUpBtn">Basic Popup</a>
-			<div data-role="popup" id="popupBasic">
-			<h1>Loading...</h1>
-		</div>
-			
+        <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop" id="popUpBtn">Basic Popup</a>
+        <div data-role="popup" id="popupBasic">
+            <h1>Loading...</h1>
+        </div>
         <div class="ui-body" id="uiBD">
-			
         </div>
-		
-        <div class="ui-input-btn ui-btn ui-btn-b" id="btnSave">
-            Save data.js
-                 <input type="button" data-enhanced="true">
+        <div class="ui-input-btn ui-btn ui-btn-b" id="btnSave"> Save data.js      <input type="button" data-enhanced="true">
         </div>
-		
         <div data-role="footer" data-position="fixed">
-            <h5>By Skull - V2.0</h5>
-               
+            <h5>By Skull - V2.0</h5>    
         </div>
     </div>
-		
     <!--FileSaverJS-->
     <!--GitHub: https://github.com/eligrey/FileSaver.js-->
     <script src="js/FileSaver.js"></script>
@@ -91,5 +63,5 @@
     <!--index.js-->
     <script src="js/index.js"></script>
 </body>
-
+			
 </html>
